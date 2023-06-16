@@ -1,6 +1,6 @@
 body {
-  background-color: #1f1f1f; /* Brown gray */
-  color: #00ff00; /* Green */
+  background-color: #1f1f1f;
+  color: #00ff00;
   font-family: monospace;
   font-size: 20px;
   margin: 0;
@@ -23,7 +23,7 @@ body {
 }
 
 .terminal .user {
-  color: #00ff00; /* Green */
+  color: #00ff00;
 }
 
 .terminal .terminal-output {
