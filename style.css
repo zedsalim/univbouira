@@ -1,3 +1,8 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
 body {
   background-color: #1f1f1f;
   color: #00ff00;
@@ -5,20 +10,15 @@ body {
   font-size: 20px;
   margin: 0;
   padding: 0;
-}
-
-.terminal {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100%
 }
 
 .terminal pre {
   background-color: #1f1f1f;
-  /*border: 2px solid #fff;
-  border-radius: 5px;*/
-  padding: 10px;
+  padding: 30px;
   overflow: auto;
 }
 
@@ -33,8 +33,32 @@ body {
 .terminal .input {
   color: #fff;
 }
+
+.input {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 1200px; /* Adjust the width as desired */
+  text-indent: 0;
+}
+
+.terminal-output {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 600px; /* Adjust the width as desired */
+}
+
+#ascii-text-output-resize-textarea {
+  margin: 0 auto;
+}
+
+main section.index .wrapper .ascii-text-output textarea[name="output"] {
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+  font-family: monospace;
+}
+
 pre {
   white-space: pre-wrap;
   margin: 0;
 }
-
