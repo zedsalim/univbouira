@@ -136,3 +136,50 @@ input {
     outline: none;
 }
 
+#footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: var(--foreground);
+    text-align: center;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background);
+    padding: 10px 0;
+  }
+  
+  #footer ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  #footer li {
+    display: inline-block;
+    margin-right: 15px;
+    vertical-align: middle;
+  }
+  
+  #footer li a {
+    margin-right: 15px;
+  }
+  
+  #footer li:last-child {
+    margin-right: 0;
+  }
+  
+  #footer li:last-child a {
+    margin-right: 0;
+  }
+  
+  #footer a {
+    color: var(--foreground);
+    background-image: none;
+  }
+  
+  #footer a:hover {
+    color: lighten(var(--foreground), 20%);
+  }

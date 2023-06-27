@@ -135,42 +135,54 @@ input {
     border: none;
     outline: none;
 }
-
 #footer {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: var(--background);
     color: var(--foreground);
+    text-align: center;
+    font-size: 13px;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: var(--background);
     padding: 10px 0;
   }
   
-  #footer nav ul {
+  #footer ul {
     margin: 0;
     padding: 0;
     list-style: none;
   }
   
-  #footer nav ul li {
+  #footer li {
     display: inline-block;
-    margin-right: 30px; /* Increase the value to adjust the spacing */
+    margin-right: 15px;
+    vertical-align: middle;
   }
   
-  #footer nav ul li:last-child {
+  #footer li a {
+    margin-right: 15px;
+  }
+  
+  #footer li:last-child {
     margin-right: 0;
   }
   
-  #footer nav ul li a {
-    color: var(--foreground);
-    text-decoration: none;
+  #footer li:last-child a {
+    margin-right: 0;
   }
   
-  #footer nav ul li a:hover {
-    color: var(--background);
-    background-color: var(--orange);
+  #footer a {
+    color: var(--foreground);
+    background-image: none;
   }
+  
+  #footer a:hover {
+    color: lighten(var(--foreground), 20%);
+  }
+  
+  
+  
   
