@@ -57,6 +57,12 @@ span {
     color: var(--green);
 }
 
+p.increased-line-height {
+    color: #B9C9B8;
+    line-height: 1.5;
+    font-size: 1.1rem;
+  }
+
 h1 {
     display: inline;
     font-family: var(--font);
