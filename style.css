@@ -1,64 +1,120 @@
-* {
-	margin: 0;
-	padding: 0;
+
+:root {
+    --font: "monospace";
+    --font-family: "monospace";
+    --background: #080c07;
+    --foreground: #B9C9B8;
+    --green: #638660;
+    --red: #BD4D5A;
+    --orange: #A47449;
+    --branch: 1px solid #B9C9B8;
+}
+
+html {
+    font-size: 25px;
+}
+
+html, body {
+    height: 100%;
 }
 
 body {
-  background-color: #1f1f1f;
-  color: #00ff00;
-  font-family: monospace;
-  font-size: 20px;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background: var(--background);
+    margin: 0;
+    padding: 0;
 }
 
-.terminal pre {
-  background-color: #1f1f1f;
-  padding: 30px;
-  overflow: auto;
+.container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-.terminal .user {
-  color: #00ff00;
+
+.prompt {
+    font-family: var(--font);
+    color: var(--foreground);
 }
 
-.terminal .terminal-output {
-  color: #fff;
+.prompt~.prompt {
+    padding: 1.5rem 0 0.3125rem;
 }
 
-.terminal .input {
-  color: #fff;
+span {
+    color: var(--green);
 }
 
-.input {
-  text-align: center;
-  margin: 0 auto;
-  max-width: 1200px; /* Adjust the width as desired */
-  text-indent: 0;
+h1 {
+    display: inline;
+    font-family: var(--font);
+    font-size: 1rem;
+    font-weight: normal;
+    color: var(--red);
 }
 
-.terminal-output {
-  text-align: center;
-  margin: 0 auto;
-  max-width: 600px; /* Adjust the width as desired */
+.tree > ul {
+    margin: 0;
+    padding-left: 1rem;
 }
 
-#ascii-text-output-resize-textarea {
-  margin: 0 auto;
+ul {
+    list-style: none;
+    padding-left: 2.5rem;
 }
 
-main section.index .wrapper .ascii-text-output textarea[name="output"] {
-  width: 100%;
-  height: 100%;
-  font-size: 20px;
-  font-family: monospace;
+li {
+    position: relative;
 }
 
-pre {
-  white-space: pre-wrap;
-  margin: 0;
+li::before, li::after {
+    content: "";
+    position: absolute;
+    left: -0.75rem;
+}
+
+li::before {
+    border-top: var(--branch);
+    top: 0.75rem;
+    width: 0.5rem;
+}
+
+li::after {
+    border-left: var(--branch);
+    height: 100%;
+    top: 0.25rem;
+}
+
+li:last-child::after {
+    height: 0.5rem;
+}
+
+a {
+    font-family: var(--font);
+    font-size: 1rem;
+    color: var(--foreground);
+    text-decoration: none;
+    outline: none;
+}
+
+a:hover {
+    color: var(--background);
+    background: var(--orange);
+}
+
+form h1 {
+    padding-left: 0.125rem;
+}
+
+input {
+    font-family: var(--font);
+    font-size: 1rem;
+    color: var(--foreground);
+    background-color: var(--background);
+    border: none;
+    outline: none;
 }
