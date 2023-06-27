@@ -135,3 +135,42 @@ input {
     border: none;
     outline: none;
 }
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--background);
+    color: var(--foreground);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+  }
+  
+  #footer nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  #footer nav ul li {
+    display: inline-block;
+    margin-right: 30px; /* Increase the value to adjust the spacing */
+  }
+  
+  #footer nav ul li:last-child {
+    margin-right: 0;
+  }
+  
+  #footer nav ul li a {
+    color: var(--foreground);
+    text-decoration: none;
+  }
+  
+  #footer nav ul li a:hover {
+    color: var(--background);
+    background-color: var(--orange);
+  }
+  
