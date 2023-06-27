@@ -4,8 +4,8 @@
 }
 
 body {
-  background-color: #1f1f1f;
-  color: #00ff00;
+  background-color: #080c07;
+  color: #638660;
   font-family: monospace;
   font-size: 20px;
   margin: 0;
@@ -17,21 +17,25 @@ body {
 }
 
 .terminal pre {
-  background-color: #1f1f1f;
+  background-color: #080c07;
   padding: 30px;
   overflow: auto;
 }
 
 .terminal .user {
-  color: #00ff00;
+  color: #BD4D5A;
+}
+
+.terminal .user1 {
+  color: #638660;
 }
 
 .terminal .terminal-output {
-  color: #fff;
+  color: #B9C9B8;
 }
 
 .terminal .input {
-  color: #fff;
+  color: #B9C9B8;
 }
 
 .input {
