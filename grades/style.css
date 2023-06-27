@@ -39,9 +39,9 @@ body {
 .container {
     position: absolute;
     top: 0;
-    left: 50%;
+    left: 40%;
     transform: translateX(-50%);
-    width: 68%;
+
 }
 
 
