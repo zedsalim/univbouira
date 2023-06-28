@@ -150,36 +150,60 @@ input {
     background-color: var(--background);
     padding: 10px 0;
   }
-  
+
   #footer ul {
     margin: 0;
     padding: 0;
     list-style: none;
   }
-  
+
   #footer li {
     display: inline-block;
     margin-right: 15px;
     vertical-align: middle;
   }
-  
+
   #footer li a {
     margin-right: 15px;
   }
-  
+
   #footer li:last-child {
     margin-right: 0;
   }
-  
+
   #footer li:last-child a {
     margin-right: 0;
   }
-  
+
   #footer a {
     color: var(--foreground);
     background-image: none;
   }
-  
+
   #footer a:hover {
     color: lighten(var(--foreground), 20%);
+  }
+
+  .grades-list {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    background-color: #fff;
+    padding: 10px;
+  }
+
+  .grades-list table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .grades-list th,
+  .grades-list td {
+    padding: 5px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .grades-list th {
+    font-weight: bold;
   }
