@@ -44,7 +44,6 @@ body {
     width: 65%;
 }
 
-
 .prompt {
     font-family: var(--font);
     color: var(--foreground);
@@ -63,8 +62,6 @@ p.increased-line-height {
     line-height: 1.5;
     font-size: 1.1rem;
   }
-
-
 
 h1 {
     display: inline;

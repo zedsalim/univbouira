@@ -44,7 +44,6 @@ body {
 
 }
 
-
 .prompt {
     font-family: var(--font);
     color: var(--foreground);
@@ -63,8 +62,6 @@ p.increased-line-height {
     line-height: 1.5;
     font-size: 1.1rem;
   }
-
-
 
 h1 {
     display: inline;
@@ -137,73 +134,49 @@ input {
 }
 
 #footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    color: var(--foreground);
-    text-align: center;
-    font-size: 13px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--background);
-    padding: 10px 0;
-  }
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: var(--foreground);
+  text-align: center;
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background);
+  padding: 10px 0;
+}
 
-  #footer ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
+#footer ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 
-  #footer li {
-    display: inline-block;
-    margin-right: 15px;
-    vertical-align: middle;
-  }
+#footer li {
+  display: inline-block;
+  margin-right: 15px;
+  vertical-align: middle;
+}
 
-  #footer li a {
-    margin-right: 15px;
-  }
+#footer li a {
+  margin-right: 15px;
+}
 
-  #footer li:last-child {
-    margin-right: 0;
-  }
+#footer li:last-child {
+  margin-right: 0;
+}
 
-  #footer li:last-child a {
-    margin-right: 0;
-  }
+#footer li:last-child a {
+  margin-right: 0;
+}
 
-  #footer a {
-    color: var(--foreground);
-    background-image: none;
-  }
+#footer a {
+  color: var(--foreground);
+  background-image: none;
+}
 
-  #footer a:hover {
-    color: lighten(var(--foreground), 20%);
-  }
-
-  .grades-list {
-    display: none;
-    position: absolute;
-    z-index: 1;
-    background-color: #fff;
-    padding: 10px;
-  }
-
-  .grades-list table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-
-  .grades-list th,
-  .grades-list td {
-    padding: 5px;
-    text-align: left;
-    border-bottom: 1px solid #ccc;
-  }
-
-  .grades-list th {
-    font-weight: bold;
-  }
+#footer a:hover {
+  color: lighten(var(--foreground), 20%);
+}
