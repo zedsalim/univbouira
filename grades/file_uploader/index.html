@@ -62,29 +62,24 @@
       }
 
       .file-input-label:hover {
-       background-color: #a47449;
+        background-color: #a47449;
       }
 
       input[type="text"] {
-      background-color: #b9c9b8;
-      color: #080c07;
-      padding: 8px;
-      border: none;
-      border-radius: 3px;
-      font-size: 16px;
-      width: auto;
+        background-color: #b9c9b8;
+        color: #080c07;
+        padding: 8px;
+        border: none;
+        border-radius: 3px;
+        font-size: 16px;
+        width: auto;
       }
     </style>
   </head>
   <body>
     <h1>إرفع الملف الخاص بك</h1>
     <form>
-      <input
-        type="text"
-        name="username"
-        placeholder="Your Name"
-        required
-      /><br /><br />
+      <input type="text" name="username" placeholder="Your Name" required /><br /><br />
       <label for="module">إسم المقياس:</label>
       <input
         type="text"
@@ -124,8 +119,8 @@
       <br /><br />
 
       <label for="myFile" class="file-input-label">
-        <input type="file" id="myFile" name="myFile" multiple />
-        <span id="file-input-text">Choose Files</span>
+        <input type="file" id="myFile" name="myFile" multiple onchange="updateFileName(this)" />
+        <span id="file-input-text">إختر الملف</span>
       </label>
 
       <br /><br />
@@ -134,16 +129,21 @@
       <label id="resp"></label>
     </form>
     <script>
-      document
-        .getElementById("submitBtn")
-        .addEventListener("click", function (e) {
-          google.script.run
-            .withSuccessHandler(onSuccess)
-            .uploadFiles(this.parentNode);
-        });
+      document.getElementById("submitBtn").addEventListener("click", function (e) {
+        google.script.run.withSuccessHandler(onSuccess).uploadFiles(this.parentNode);
+      });
 
       function onSuccess(data) {
-        document.getElementById("resp").innerHTML = "File Uploaded  " + data;
+        document.getElementById("resp").innerHTML = "تم الرفع بنجاح";
+      }
+
+      function updateFileName(input) {
+        const fileInputText = document.getElementById("file-input-text");
+        if (input.files.length > 0) {
+          fileInputText.innerText = input.files[0].name;
+        } else {
+          fileInputText.innerText = "إختر الملف";
+        }
       }
     </script>
   </body>
