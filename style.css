@@ -42,6 +42,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     width: 65%;
+    padding-bottom: 60px;
 }
 
 .prompt {
