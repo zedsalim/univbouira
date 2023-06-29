@@ -1,16 +1,85 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <base target="_top">
+    <base target="_top" />
     <title>CS Bouira File Uploader</title>
+    <style>
+      body {
+        background-color: #080c07;
+        color: #b9c9b8;
+        font-family: Arial, sans-serif;
+      }
+
+      select {
+        background-color: #638660;
+        color: #b9c9b8;
+        padding: 5px;
+        border: none;
+        border-radius: 3px;
+        font-size: 14px;
+      }
+
+      option {
+        background-color: #080c07;
+        color: #b9c9b8;
+        font-size: 14px;
+      }
+
+      input[type="button"] {
+        background-color: #638660;
+        color: #b9c9b8;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 3px;
+      }
+
+      input[type="button"]:hover {
+        background-color: #a47449;
+      }
+
+      input[type="button"]:focus {
+        outline: none;
+      }
+      .file-input-label {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        padding: 10px 20px;
+        background-color: #638660;
+        color: #b9c9b8;
+        border: none;
+        border-radius: 5px;
+      }
+
+      .file-input-label input[type="file"] {
+        display: none;
+      }
+
+      #file-input-text {
+        pointer-events: none;
+      }
+    </style>
   </head>
   <body>
     <h1>إرفع الملف الخاص بك</h1>
     <form>
-      <input type="text" name="username" placeholder="Your Name" required><br><br>
+      <input
+        type="text"
+        name="username"
+        placeholder="Your Name"
+        required
+      /><br /><br />
       <label for="module">إسم المقياس:</label>
-      <input type="text" name="module" id="module" placeholder="Exemple: Analyse" required>
-      <br><br>
+      <input
+        type="text"
+        name="module"
+        id="module"
+        placeholder="Exemple: Analyse"
+        required
+      />
+      <br /><br />
 
       <label for="fileType">نوع الملف:</label>
       <select name="fileType" id="fileType" required>
@@ -21,7 +90,7 @@
         <option value="Test">Examen</option>
         <option value="Other">Other</option>
       </select>
-      <br><br>
+      <br /><br />
 
       <label for="grade">السنة:</label>
       <select name="grade" id="grade" required>
@@ -31,30 +100,37 @@
         <option value="M1">M1</option>
         <option value="M2">M2</option>
       </select>
-      <br><br>
+      <br /><br />
 
       <label for="semestre">الفصل:</label>
       <select name="semestre" id="semestre" required>
         <option value="1">1</option>
         <option value="2">2</option>
       </select>
-       <br><br>
-       
-      <input type="file" name="myFile" multiple><br><br>
+      <br /><br />
 
-      <input type="button" id="submitBtn" value="إرسال">
+      <label for="myFile" class="file-input-label">
+        <input type="file" id="myFile" name="myFile" multiple />
+        <span id="file-input-text">Choose Files</span>
+      </label>
+
+      <br /><br />
+
+      <input type="button" id="submitBtn" value="إرسال" />
       <label id="resp"></label>
     </form>
-   <script>
-      document.getElementById('submitBtn').addEventListener('click',
-        function(e){
-          google.script.run.withSuccessHandler(onSuccess).uploadFiles(this.parentNode)
-        })
-        
-        function onSuccess(data){
-          document.getElementById('resp').innerHTML = "File Uploaded  " +data;
-        }
-       
+    <script>
+      document
+        .getElementById("submitBtn")
+        .addEventListener("click", function (e) {
+          google.script.run
+            .withSuccessHandler(onSuccess)
+            .uploadFiles(this.parentNode);
+        });
+
+      function onSuccess(data) {
+        document.getElementById("resp").innerHTML = "File Uploaded  " + data;
+      }
     </script>
   </body>
 </html>
