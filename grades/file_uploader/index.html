@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <title>CS Bouira File Uploader</title>
+  </head>
+  <body>
+    <h1>إرفع الملف الخاص بك</h1>
+    <form>
+      <input type="text" name="username" placeholder="Your Name" required><br><br>
+      <label for="module">إسم المقياس:</label>
+      <input type="text" name="module" id="module" placeholder="Exemple: Analyse" required>
+      <br><br>
+
+      <label for="fileType">نوع الملف:</label>
+      <select name="fileType" id="fileType" required>
+        <option value="Cours">Cours</option>
+        <option value="TD">TD</option>
+        <option value="TP">TP</option>
+        <option value="Examen">Test</option>
+        <option value="Test">Examen</option>
+        <option value="Other">Other</option>
+      </select>
+      <br><br>
+
+      <label for="grade">السنة:</label>
+      <select name="grade" id="grade" required>
+        <option value="L1">L1</option>
+        <option value="L2">L2</option>
+        <option value="L3">L3</option>
+        <option value="M1">M1</option>
+        <option value="M2">M2</option>
+      </select>
+      <br><br>
+
+      <label for="semestre">الفصل:</label>
+      <select name="semestre" id="semestre" required>
+        <option value="1">1</option>
+        <option value="2">2</option>
+      </select>
+       <br><br>
+       
+      <input type="file" name="myFile" multiple><br><br>
+
+      <input type="button" id="submitBtn" value="إرسال">
+      <label id="resp"></label>
+    </form>
+   <script>
+      document.getElementById('submitBtn').addEventListener('click',
+        function(e){
+          google.script.run.withSuccessHandler(onSuccess).uploadFiles(this.parentNode)
+        })
+        
+        function onSuccess(data){
+          document.getElementById('resp').innerHTML = "File Uploaded  " +data;
+        }
+       
+    </script>
+  </body>
+</html>
