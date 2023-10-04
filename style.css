@@ -39,7 +39,7 @@ body {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 80%;
+  width: 90%;
   padding-bottom: 60px;
 }
 
@@ -213,6 +213,6 @@ input {
     font-size: 20px; /* Increase font size for desktops */
   }
   .container {
-    width: 80%; /* Adjust container width for desktops */
+    width: 65%; /* Adjust container width for desktops */
   }
 }
