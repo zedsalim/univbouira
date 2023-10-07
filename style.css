@@ -209,8 +209,11 @@ input {
 
 /* Desktop styles (adjust as needed) */
 @media screen and (min-width: 1024px) {
+  html {
+    font-size: 22px;
+  }
   body {
-    font-size: 20px; /* Increase font size for desktops */
+    font-size: 22px; /* Increase font size for desktops */
   }
   .container {
     width: 65%; /* Adjust container width for desktops */
