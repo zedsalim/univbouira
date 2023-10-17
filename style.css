@@ -191,31 +191,31 @@ input {
 /* Mobile-first styles */
 @media screen and (min-width: 768px) {
   body {
-    font-size: 16px; /* Increase font size for tablets */
+    font-size: 16px;
   }
   .container {
-    width: 100%; /* Adjust container width for tablets */
+    width: 100%;
   }
 }
-/* Tablet styles (adjust as needed) */
+/* Tablet styles */
 @media screen and (min-width: 768px) {
   body {
-    font-size: 18px; /* Increase font size for tablets */
+    font-size: 18px;
   }
   .container {
-    width: 100%; /* Adjust container width for tablets */
+    width: 100%;
   }
 }
 
-/* Desktop styles (adjust as needed) */
+/* Desktop styles */
 @media screen and (min-width: 1024px) {
   html {
     font-size: 22px;
   }
   body {
-    font-size: 22px; /* Increase font size for desktops */
+    font-size: 22px;
   }
   .container {
-    width: 65%; /* Adjust container width for desktops */
+    width: 65%;
   }
 }
