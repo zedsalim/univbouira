@@ -188,6 +188,30 @@ input {
   color: lighten(var(--foreground), 20%);
 }
 
+.hidden {
+  display: none;
+}
+
+#notification {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: #333;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+#closeNotification {
+  background-color: #bd4d5a;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 /* Mobile-first styles */
 @media screen and (min-width: 768px) {
   body {
