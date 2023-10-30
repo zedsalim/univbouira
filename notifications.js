@@ -6,16 +6,16 @@ const text = [
     "وَتَوَكَّلْ عَلَى الْحَيِّ الَّذِي لَا يَمُوتُ وَسَبِّحْ بِحَمْدِهِ ۚ وكَفَىٰ بِهِ بِذُنُوبِ عِبَادِهِ خَبِيرًا {سورة الفرقان}",
 ];
 
-function getRandomQuote() {
+function getRandomText() {
     return text[Math.floor(Math.random() * text.length)];
 }
 
 const notification = document.getElementById("notification");
-const quoteText = document.getElementById("quoteText");
+const quoteText = document.getElementById("notif-Text");
 const closeNotificationButton = document.getElementById("closeNotification");
 
-const randomQuote = getRandomQuote();
-quoteText.textContent = randomQuote;
+const randomText = getRandomText();
+quoteText.textContent = randomText;
 
 closeNotificationButton.addEventListener("click", () => {
     notification.style.display = "none";
