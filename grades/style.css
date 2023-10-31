@@ -155,6 +155,11 @@ input {
   padding: 10px 0;
 }
 
+#placeholder {
+  color: transparent;
+  pointer-events: none;
+}
+
 #footer ul {
   margin: 0;
   padding: 0;

@@ -140,6 +140,12 @@ input {
   border: none;
   outline: none;
 }
+
+#placeholder {
+  color: transparent;
+  pointer-events: none;
+}
+
 #footer {
   position: fixed;
   bottom: 0;
