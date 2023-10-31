@@ -4,21 +4,22 @@ document.addEventListener("DOMContentLoaded", function() {
   var gradeItems = gradesList.querySelectorAll("table tr:not(:first-child");
 
   gradesList.style.display = "none";
+  var isMobile = window.innerWidth < 768;
 
   gradesLink.addEventListener("mouseover", function() {
-    if (window.innerWidth >= 768) {
+    if (!isMobile) {
       gradesList.style.display = "table";
     }
   });
 
   gradesLink.addEventListener("mouseout", function() {
-    if (window.innerWidth >= 768) {
+    if (!isMobile) {
       gradesList.style.display = "none";
     }
   });
 
   gradesLink.addEventListener("click", function(e) {
-    if (window.innerWidth < 768) {
+    if (isMobile) {
       e.preventDefault();
       if (gradesList.style.display === "table") {
         gradesList.style.display = "none";
@@ -29,14 +30,22 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   document.addEventListener("click", function(e) {
-    if (window.innerWidth < 768 && e.target !== gradesLink && !gradesLink.contains(e.target) && !gradesList.contains(e.target)) {
+    if (isMobile && e.target !== gradesLink && !gradesLink.contains(e.target) && !gradesList.contains(e.target)) {
       gradesList.style.display = "none";
     }
   });
 
   gradeItems.forEach(function(item) {
     item.addEventListener("click", function(e) {
-      e.stopPropagation();
+      if (isMobile) {
+        e.stopPropagation();
+      }
     });
+  });
+
+  window.addEventListener("scroll", function() {
+    if (isMobile) {
+      gradesList.style.display = "none";
+    }
   });
 });
