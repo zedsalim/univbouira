@@ -20,7 +20,23 @@ document.addEventListener("DOMContentLoaded", function() {
   gradesLink.addEventListener("click", function(e) {
     if (window.innerWidth < 768) {
       e.preventDefault();
-      gradesList.style.display = (gradesList.style.display === "table") ? "none" : "table";
+      if (gradesList.style.display === "table") {
+        gradesList.style.display = "none";
+      } else {
+        gradesList.style.display = "table";
+      }
     }
+  });
+
+  document.addEventListener("click", function(e) {
+    if (window.innerWidth < 768 && e.target !== gradesLink && !gradesLink.contains(e.target) && !gradesList.contains(e.target)) {
+      gradesList.style.display = "none";
+    }
+  });
+
+  gradeItems.forEach(function(item) {
+    item.addEventListener("click", function(e) {
+      e.stopPropagation();
+    });
   });
 });
