@@ -11,6 +11,12 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 
+  gradesLink.addEventListener("mouseout", function() {
+    if (window.innerWidth >= 768) {
+      gradesList.style.display = "none";
+    }
+  });
+
   gradesLink.addEventListener("click", function(e) {
     if (window.innerWidth < 768) {
       e.preventDefault();
@@ -18,5 +24,3 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 });
-
-  
