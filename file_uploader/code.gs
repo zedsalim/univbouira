@@ -5,10 +5,19 @@ function doGet() {
 
 function uploadFiles(data) {
   var file = data.myFile;
+  var allowedExtensions = ['pdf', 'jpg', 'jpeg', 'png', 'doc', 'docx', 'ppt', 'pptx', 'xls', 'xlsx', 'zip', 'rar'];
+
+  // Check if the file extension is allowed
+  var fileName = file.getName();
+  var fileExtension = fileName.split('.').pop().toLowerCase();
+  if (allowedExtensions.indexOf(fileExtension) === -1) {
+    return { success: false, error: 'Invalid file type. Allowed file types are: ' + allowedExtensions.join(', ') };
+  }
+
   var folder = DriveApp.getFolderById('18BMS0awWhlPAQZUaeVrA3BmK3rmZoeTz');
   var createFile = folder.createFile(file);
   var fileUrl = createFile.getUrl();
-  
+
   // Extract the additional form fields
   var module = data.module;
   var fileType = data.fileType;
@@ -17,8 +26,8 @@ function uploadFiles(data) {
 
   // Store the record in Google Sheets
   listRecord(data.username, createFile.getName(), module, fileType, grade, semestre);
-  
-  return fileUrl;
+
+  return { success: true, fileUrl: fileUrl };
 }
 
 function listRecord(username, filename, module, fileType, grade, semestre) {

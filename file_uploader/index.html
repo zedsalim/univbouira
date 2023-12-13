@@ -134,8 +134,14 @@
       });
 
       function onSuccess(data) {
-        document.getElementById("resp").innerHTML = "تم الرفع بنجاح";
-      }
+  var responseLabel = document.getElementById("resp");
+
+  if (data.success) {
+    responseLabel.innerHTML = "تم الرفع بنجاح";
+  } else {
+    responseLabel.innerHTML = "نوع الملف غير مقبول. الأنواع المسموح بها هي: pdf، jpg، jpeg، png، doc، docx، ppt، pptx، xls، xlsx، zip، rar.";
+  }
+}
 
       function updateFileName(input) {
         const fileInputText = document.getElementById("file-input-text");
