@@ -11,7 +11,7 @@ function uploadFiles(data) {
   var fileName = file.getName();
   var fileExtension = fileName.split('.').pop().toLowerCase();
   if (allowedExtensions.indexOf(fileExtension) === -1) {
-    return { success: false, error: 'Invalid file type. Allowed file types are: ' + allowedExtensions.join(', ') };
+    return { success: false, error: 'نوع الملف غير مسموح. الأنواع المسموح بها هي: ' + allowedExtensions.join(', ') };
   }
 
   var folder = DriveApp.getFolderById('18BMS0awWhlPAQZUaeVrA3BmK3rmZoeTz');
