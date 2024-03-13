@@ -20,11 +20,34 @@
       gtag("js", new Date());
 
       gtag("config", "G-Q7Y0WEM3KB");
+      
+      // Function to handle loading of videos
+      function handleVideoLoad(videoId) {
+        var loadingImg = document.createElement("img");
+        loadingImg.src = "../img/loading.gif";
+        loadingImg.alt = "Loading...";
+        loadingImg.classList.add("loading-image");
+        var videoContainer = document.getElementById(videoId);
+        videoContainer.appendChild(loadingImg);
+
+        var iframe = videoContainer.querySelector("iframe");
+        iframe.onload = function() {
+          loadingImg.style.display = "none";
+        };
+      }
+      
+      // Call handleVideoLoad function for each video container
+      document.addEventListener("DOMContentLoaded", function() {
+        var videoContainers = document.querySelectorAll('.video-container');
+        videoContainers.forEach(function(container, index) {
+          handleVideoLoad('video' + (index + 1));
+        });
+      });
     </script>
   </head>
   <body>
     <div class="container">
-      <div class="video-container">
+      <div class="video-container" id="video1">
         <h1><a href="https://drive.google.com/file/d/1f_VRoM4u3ECd5b5Lm1x2MIleBmTBh9Ap/preview" target="_blank">Video Chapitre 1</a></h1>
         <iframe
           src="https://drive.google.com/file/d/1f_VRoM4u3ECd5b5Lm1x2MIleBmTBh9Ap/preview"
@@ -35,7 +58,7 @@
         ></iframe>
       </div>
 
-      <div class="video-container">
+      <div class="video-container" id="video2">
         <h1><a href="https://drive.google.com/file/d/1GO4x5DULfcBZeV71JjJrgvx25DmbUbJT/preview" target="_blank">Video 1 Chapitre 2</a></h1>
         <iframe
           src="https://drive.google.com/file/d/1GO4x5DULfcBZeV71JjJrgvx25DmbUbJT/preview"
@@ -46,7 +69,7 @@
         ></iframe>
       </div>
 
-      <div class="video-container">
+      <div class="video-container" id="video3">
         <h1><a href="https://drive.google.com/file/d/1ECamWLWakYRtU9tr7ly-ZWAAvRr3MDG9/preview" target="_blank">Video 2 Chapitre 2</a></h1>
         <iframe
           src="https://drive.google.com/file/d/1ECamWLWakYRtU9tr7ly-ZWAAvRr3MDG9/preview"
@@ -57,7 +80,7 @@
         ></iframe>
       </div>
 
-      <div class="video-container">
+      <div class="video-container" id="video4">
         <h1><a href="https://drive.google.com/file/d/1KQ2iZakD5NWJlgOiryJG8WrP-dFSoirF/preview" target="_blank">Video 1 Chapitre 3</a></h1>
         <iframe
           src="https://drive.google.com/file/d/1KQ2iZakD5NWJlgOiryJG8WrP-dFSoirF/preview"
@@ -68,7 +91,7 @@
         ></iframe>
       </div>
 
-      <div class="video-container">
+      <div class="video-container" id="video5">
         <h1><a href="https://drive.google.com/file/d/1vSbXAVSNCNZPUqX2rMyIu1r8mqISOaxl/preview" target="_blank">Video 2 Chapitre 3</a></h1>
         <iframe
           src="https://drive.google.com/file/d/1vSbXAVSNCNZPUqX2rMyIu1r8mqISOaxl/preview"
@@ -79,7 +102,7 @@
         ></iframe>
       </div>
 
-      <div class="video-container">
+      <div class="video-container" id="video6">
         <h1><a href="https://drive.google.com/file/d/10QxwbYOa7YB_YgWrovmh9wawPPgLy0mj/preview" target="_blank">Video 1 Chapitre 4</a></h1>
         <iframe
           src="https://drive.google.com/file/d/10QxwbYOa7YB_YgWrovmh9wawPPgLy0mj/preview"
@@ -90,7 +113,7 @@
         ></iframe>
       </div>
 
-      <div class="video-container">
+      <div class="video-container" id="video7">
         <h1><a href="https://drive.google.com/file/d/1tJGdk0BF6G-sGeccZ8-ZZsVOEvS3_rO1/preview" target="_blank">Video 2 Chapitre 4</a></h1>
         <iframe
           src="https://drive.google.com/file/d/1tJGdk0BF6G-sGeccZ8-ZZsVOEvS3_rO1/preview"
@@ -101,7 +124,7 @@
         ></iframe>
       </div>
 
-      <div class="video-container">
+      <div class="video-container" id="video8">
         <h1><a href="https://drive.google.com/file/d/1y3vgaWvuIiT-r09slBjg2O74X9XSIw3e/preview" target="_blank">Video 3 Chapitre 4</a></h1>
         <iframe
           src="https://drive.google.com/file/d/1y3vgaWvuIiT-r09slBjg2O74X9XSIw3e/preview"
@@ -112,7 +135,7 @@
         ></iframe>
       </div>
 
-      <div class="video-container">
+      <div class="video-container" id="video9">
         <h1><a href="https://drive.google.com/file/d/1LS5Fm66evAyY42rPRUzY63Js5mnrrUmk/preview" target="_blank">Video 4 Chapitre 4</a></h1>
         <iframe
           src="https://drive.google.com/file/d/1LS5Fm66evAyY42rPRUzY63Js5mnrrUmk/preview"
@@ -123,7 +146,7 @@
         ></iframe>
       </div>
 
-      <div class="video-container">
+      <div class="video-container" id="video10">
         <h1><a href="https://drive.google.com/file/d/1iFne7ixcpX0dygExjPCClvLdJ_6Dj644/preview" target="_blank">Video Correction TD 0</a></h1>
         <iframe
           src="https://drive.google.com/file/d/1iFne7ixcpX0dygExjPCClvLdJ_6Dj644/preview"
@@ -134,7 +157,7 @@
         ></iframe>
       </div>
 
-      <div class="video-container">
+      <div class="video-container" id="video11">
         <h1><a href="https://drive.google.com/file/d/1GRvAC7akWXEDzrWDxpN4W4QA7ynGjK9u/preview" target="_blank">Video Solution TD 0</a></h1>
         <iframe
           src="https://drive.google.com/file/d/1GRvAC7akWXEDzrWDxpN4W4QA7ynGjK9u/preview"
@@ -145,7 +168,7 @@
         ></iframe>
       </div>
 
-      <div class="video-container">
+      <div class="video-container" id="video12">
         <h1><a href="https://drive.google.com/file/d/1bUNOiC6zlaE-HlKp0GOQgvcr5vXvcMNc/preview" target="_blank">TP [bym-wmas-jbb (2020-04-27 at 10_44 GMT-7)]</a></h1>
         <iframe
           src="https://drive.google.com/file/d/1bUNOiC6zlaE-HlKp0GOQgvcr5vXvcMNc/preview"
@@ -156,7 +179,7 @@
         ></iframe>
       </div>
 
-      <div class="video-container">
+      <div class="video-container" id="video13">
         <h1><a href="https://drive.google.com/file/d/1W8Yx3HTufhzrqJVghLYaeUZ4zmWNrFP6/preview" target="_blank">TP [bym-wmas-jbb (2020-05-05 at 09_39 GMT-7)]</a></h1>
         <iframe
           src="https://drive.google.com/file/d/1W8Yx3HTufhzrqJVghLYaeUZ4zmWNrFP6/preview"
@@ -167,7 +190,7 @@
         ></iframe>
       </div>
 
-      <div class="video-container">
+      <div class="video-container" id="video14">
         <h1><a href="https://drive.google.com/file/d/1eh4ni6UbvBM9-Kr_P8Z0naWtNTFOkNKH/preview" target="_blank">TP [bym-wmas-jbb (2020-05-05 at 10_12 GMT-7)]</a></h1>
         <iframe
           src="https://drive.google.com/file/d/1eh4ni6UbvBM9-Kr_P8Z0naWtNTFOkNKH/preview"
@@ -178,7 +201,7 @@
         ></iframe>
       </div>
 
-      <div class="video-container">
+      <div class="video-container" id="video15">
         <h1><a href="https://drive.google.com/file/d/1NUUUs37ODDXMZEwwbFzLN6BNhHKezXSB/preview" target="_blank">TP [bym-wmas-jbb (2020-05-05 at 10_34 GMT-7)]</a></h1>
         <iframe
           src="https://drive.google.com/file/d/1NUUUs37ODDXMZEwwbFzLN6BNhHKezXSB/preview"

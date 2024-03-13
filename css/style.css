@@ -219,6 +219,7 @@ input {
 }
 
 .video-container {
+  position: relative;
   margin-bottom: 20px;
   background-color: var(--background);
   padding: 20px;
@@ -241,22 +242,35 @@ input {
   margin-top: 10px;
 }
 
+.loading-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: 15px;
+  transform: translate(-50%, -50%);
+  width: 640px;
+  height: 480px;
+  object-fit: contain;
+  background-color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* Mobile-first styles */
-@media screen and (min-width: 768px) {
-  body {
-    font-size: 16px;
-  }
-  .container {
-    width: 100%;
-  }
-  .video-container {
-    max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-  }
+@media screen and (max-width: 768px) {
   .video-container iframe {
-    width: 100%;
-    height: auto;
+    width: 440px;
+    height: 400px;
+    margin: 0 auto;
+    display: block;
+  }
+  .loading-image {
+    margin-top: 15px;
+    width: 440px;
+    height: 340px;
+    margin: 0 auto;
+    display: block;
   }
 }
 
